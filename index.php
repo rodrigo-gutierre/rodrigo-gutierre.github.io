@@ -106,6 +106,8 @@ body{font:16px/1.6 var(--sans);color:var(--tx);background:#fff;-webkit-font-smoo
 html{-webkit-text-size-adjust:100%}body{overflow-x:clip}
 img{display:block;max-width:100%}
 .g2>*,input,select{min-width:0}
+input[type=date]{-webkit-appearance:none;appearance:none;display:block;text-align:left}
+input[type=date]::-webkit-date-and-time-value{text-align:left;min-height:1.2em}
 .hero .w>*,.about>*,footer .w>*,.head>*{min-width:0}
 a{color:inherit;text-decoration:none}
 .w{max-width:1180px;margin:auto;padding:0 22px}
@@ -269,6 +271,8 @@ footer a:hover{color:#fff}
  .hero p{font-size:1.02rem}
  .cta .btn{flex:1 1 100%;justify-content:center}
  .card-f{padding:20px;border-radius:20px}
+ .g2.dt{grid-template-columns:1fr;gap:0}
+ input,select{height:48px}
  .logo b{font-size:1.1rem}.mono{width:38px;height:38px}
  .lgp img{height:32px;max-width:140px}
  section{padding:52px 0}
@@ -317,7 +321,7 @@ footer a:hover{color:#fff}
     <label for="nm">Seu nome</label><input id="nm" name="nome" required autocomplete="name">
     <label for="ds">Destino dos sonhos</label>
     <select id="ds" name="dest"><option>Ainda não decidi</option><?php foreach ($destNomes as $d) echo '<option>'.e($d).'</option>'; ?></select>
-    <div class="g2"><div><label for="i1">Ida</label><input id="i1" type="date" name="ini"></div><div><label for="i2">Volta</label><input id="i2" type="date" name="fim"></div></div>
+    <div class="g2 dt"><div><label for="i1">Ida</label><input id="i1" type="date" name="ini"></div><div><label for="i2">Volta</label><input id="i2" type="date" name="fim"></div></div>
     <div class="g2"><div><label for="ad">Adultos</label><select id="ad" name="ad"><?php for($i=1;$i<=10;$i++) echo "<option>$i</option>"; ?></select></div>
     <div><label for="cr">Crianças</label><select id="cr" name="cr"><?php for($i=0;$i<=8;$i++) echo "<option>$i</option>"; ?></select></div></div>
     <button class="btn" type="submit">Quero meu orçamento</button>
